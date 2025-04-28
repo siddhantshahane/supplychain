@@ -1,0 +1,236 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# Machine Learning Guidelines
+
+## Development Process
+
+### Data Management
+1. Establish data collection standards.
+2. Implement data validation procedures.
+3. Maintain data versioning.
+4. Ensure compliance with data privacy regulations.
+5. Document all data sources and structures.
+
+### Model Development
+1. Engineer features with domain expertise.
+2. Select appropriate models based on problem context.
+3. Perform thorough hyperparameter tuning.
+4. Use cross-validation to assess model robustness.
+5. Evaluate models with relevant metrics.
+
+### Code Organization
+1. Structure code in modular, reusable components.
+2. Maintain comprehensive documentation.
+3. Enforce version control best practices.
+4. Implement rigorous testing.
+5. Conduct regular code reviews.
+
+## Model Training
+
+### Data Preparation
+1. Clean and preprocess raw data.
+2. Apply feature scaling.
+3. Handle missing values appropriately.
+4. Detect and treat outliers.
+5. Utilize data augmentation when needed.
+
+### Training Process
+1. Split data into training and validation sets.
+2. Use batch processing for efficiency.
+3. Implement early stopping to avoid overfitting.
+4. Save model checkpoints during training.
+5. Manage computational resources effectively.
+
+### Evaluation
+1. Choose appropriate evaluation metrics.
+2. Benchmark performance against baselines.
+3. Conduct error analysis to identify improvement areas.
+4. Compare multiple models systematically.
+5. Define and execute a robust validation strategy.
+
+## Model Deployment
+
+### Pre-deployment
+1. Validate model performance and integrity.
+2. Conduct performance and stress testing.
+3. Perform a thorough security review.
+4. Update all relevant documentation.
+5. Obtain necessary approvals.
+
+### Deployment Process
+1. Use version control for model releases.
+2. Set up the target environment properly.
+3. Configure monitoring systems.
+4. Establish a rollback plan.
+5. Run A/B tests when deploying updates.
+
+### Post-deployment
+1. Continuously monitor model performance.
+2. Track and log errors in production.
+3. Update models as new data becomes available.
+4. Gather and act on user feedback.
+5. Schedule regular maintenance cycles.
+
+## Infrastructure
+
+### Computing Resources
+1. Optimize GPU utilization.
+2. Manage memory effectively.
+3. Optimize storage usage.
+4. Develop a clear scaling strategy.
+5. Monitor and control costs.
+
+### Pipeline Management
+1. Build a robust data pipeline.
+2. Automate the training pipeline.
+3. Ensure efficient inference pipeline.
+4. Set up monitoring for each pipeline stage.
+5. Maintain and update pipelines regularly.
+
+### Environment Setup
+1. Isolate development, testing, staging, and production environments.
+2. Ensure each environment is configured consistently.
+3. Document environment configurations.
+4. Use containerization for environment isolation.
+5. Automate environment setup where possible.
+
+## Quality Assurance
+
+### Testing
+1. Implement unit tests for all components.
+2. Conduct integration testing.
+3. Perform performance testing.
+4. Execute security tests.
+5. Carry out user acceptance testing.
+
+### Validation
+1. Validate all input data.
+2. Validate model outputs.
+3. Confirm performance through rigorous testing.
+4. Ensure output consistency.
+5. Reassess security validations regularly.
+
+### Monitoring
+1. Continuously monitor model performance.
+2. Detect and analyze data drift.
+3. Monitor overall system health.
+4. Track resource usage.
+5. Monitor error rates in production.
+
+## Documentation
+
+### Technical Documentation
+1. Document the system architecture.
+2. Provide detailed API documentation.
+3. Maintain data and model documentation.
+4. Prepare a comprehensive deployment guide.
+5. Update documentation with each change.
+
+### User Documentation
+1. Create user guides.
+2. Develop API usage guides.
+3. Include troubleshooting steps.
+4. Maintain an FAQ section.
+5. Highlight best practices for usage.
+
+### Maintenance Documentation
+1. Outline update procedures.
+2. Define backup strategies.
+3. Detail recovery procedures.
+4. Document monitoring protocols.
+5. Maintain an incident response plan.
+
+## Security
+
+### Data Security
+1. Encrypt data at rest.
+2. Implement strict access control.
+3. Ensure privacy protection measures.
+4. Maintain detailed audit logs.
+5. Adhere to compliance standards.
+
+### Model Security
+1. Protect model integrity.
+2. Validate all inputs to models.
+3. Validate model outputs.
+4. Control access to models.
+5. Monitor model usage continuously.
+
+### Infrastructure Security
+1. Secure network configurations.
+2. Ensure container security.
+3. Secure APIs and endpoints.
+4. Monitor infrastructure for vulnerabilities.
+5. Prepare an incident response plan.
+
+## Performance
+
+### Optimization
+1. Optimize model performance.
+2. Optimize data processing pipelines.
+3. Optimize resource utilization.
+4. Fine-tune pipeline performance.
+5. Manage costs effectively.
+
+### Scaling
+1. Implement horizontal scaling strategies.
+2. Utilize vertical scaling when needed.
+3. Set up load balancing.
+4. Allocate resources dynamically.
+5. Monitor scaling efficiency and cost.
+
+### Monitoring
+1. Define clear performance metrics.
+2. Monitor resource usage continuously.
+3. Track error rates.
+4. Monitor latency and throughput.
+5. Adjust based on performance data.
+
+## Maintenance
+
+### Regular Maintenance
+1. Schedule regular model updates.
+2. Update datasets as new data arrives.
+3. Maintain system software updates.
+4. Apply security updates promptly.
+5. Keep documentation current.
+
+### Emergency Maintenance
+1. Establish an incident response plan.
+2. Resolve issues promptly.
+3. Implement a system recovery process.
+4. Communicate clearly during emergencies.
+5. Document post-incident analyses.
+
+### Review Process
+1. Regularly review performance.
+2. Conduct periodic security reviews.
+3. Perform code reviews for maintenance.
+4. Update documentation based on feedback.
+5. Incorporate user feedback into improvements.
+
+## Best Practices
+
+### Development
+1. Adhere to coding standards.
+2. Maintain thorough documentation.
+3. Write comprehensive tests.
+4. Follow a strict review process.
+5. Use version control diligently.
+
+### Deployment
+1. Ensure proper environment setup.
+2. Prioritize security in deployment.
+3. Set up continuous monitoring.
+4. Keep deployment documentation updated.
+5. Plan for regular maintenance.
+
+### Operations
+1. Monitor systems continuously.
+2. Schedule regular maintenance.
+3. Enforce robust security practices.
+4. Update all documentation regularly.
+5. Provide ongoing training and support.

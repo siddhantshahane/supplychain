@@ -1,0 +1,178 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# Testing Guidelines
+
+## Backend Testing (Django)
+
+### Unit Tests
+1. Test functions independently.
+2. Use descriptive test names.
+3. Follow the AAA pattern (Arrange, Act, Assert).
+4. Mock external dependencies.
+5. Cover edge cases and error conditions.
+
+### Integration Tests
+1. Verify component interactions.
+2. Use a dedicated test database.
+3. Test API endpoints.
+4. Validate data flow between modules.
+5. Confirm error handling works as expected.
+
+### Test Coverage
+1. Aim for a minimum of 80% test coverage.
+2. Cover critical code paths.
+3. Include tests for error scenarios.
+4. Test security features.
+5. Document test cases clearly.
+
+### Django Test Rules
+1. Use Django's built-in test framework.
+2. Utilize fixtures appropriately.
+3. Clean up test data after execution.
+4. Use meaningful assertions.
+5. Test model methods thoroughly.
+
+## Frontend Testing (React)
+
+### Component Tests
+1. Verify component rendering.
+2. Test user interactions.
+3. Validate state changes.
+4. Check proper prop handling.
+5. Test error states and fallbacks.
+
+### Integration Tests
+1. Validate component integration.
+2. Test routing and navigation.
+3. Verify state management interactions.
+4. Test API integration.
+5. Confirm error handling at integration level.
+
+### End-to-End Tests
+1. Test complete user workflows.
+2. Cover critical application paths.
+3. Validate responsive design.
+4. Check browser compatibility.
+5. Monitor performance under user interactions.
+
+## Test Organization
+
+### Backend Structure
+1. Use one test file per module.
+2. Group related tests together.
+3. Utilize test classes.
+4. Maintain clear naming conventions.
+5. Ensure proper test isolation.
+
+### Frontend Structure
+1. Place test files alongside components.
+2. Group tests by feature.
+3. Organize tests in suites.
+4. Write clear test descriptions.
+5. Use proper setup and teardown procedures.
+
+## Test Data
+
+### Test Fixtures
+1. Use realistic data samples.
+2. Keep fixtures minimal and maintainable.
+3. Document the data structure.
+4. Version control all fixtures.
+5. Update fixtures regularly.
+
+### Mock Data
+1. Use consistent, reusable mocks.
+2. Document the mock structure.
+3. Keep mocks simple and clear.
+4. Update mocks with API changes.
+5. Use factory functions for dynamic data.
+
+## Test Automation
+
+### CI/CD Integration
+1. Run tests on every pull request.
+2. Block merges on test failures.
+3. Generate and review coverage reports.
+4. Track test metrics continuously.
+5. Alert on failures immediately.
+
+### Test Environment
+1. Use a separate test database.
+2. Maintain a clean test environment.
+3. Ensure consistent setup across runs.
+4. Document all test environment requirements.
+5. Version control test configurations.
+
+## Performance Testing
+
+### Load Testing
+1. Test API endpoints under load.
+2. Analyze database query performance.
+3. Measure frontend rendering times.
+4. Monitor memory usage.
+5. Evaluate response times under load.
+
+### Stress Testing
+1. Simulate high load conditions.
+2. Test error handling under stress.
+3. Validate system recovery.
+4. Assess system scalability.
+5. Document performance limits.
+
+## Security Testing
+
+### Authentication Tests
+1. Verify login and logout flows.
+2. Test permission enforcement.
+3. Validate token handling and expiration.
+4. Ensure secure session management.
+5. Check for security header compliance.
+
+### Vulnerability Tests
+1. Test input validation rigorously.
+2. Validate XSS prevention mechanisms.
+3. Confirm CSRF protection.
+4. Test for SQL injection vulnerabilities.
+5. Validate file upload security.
+
+## Test Documentation
+
+### Test Cases
+1. Provide clear descriptions.
+2. Document expected results.
+3. List test data used.
+4. Note any dependencies.
+5. Specify setup requirements.
+
+### Test Reports
+1. Include detailed coverage reports.
+2. Report performance metrics.
+3. Document error logs.
+4. Provide test statistics.
+5. Analyze trends over time.
+
+## Best Practices
+
+### General Rules
+1. Practice Test-Driven Development (TDD) where feasible.
+2. Keep tests simple and focused.
+3. Regularly maintain and update tests.
+4. Document all changes to tests.
+5. Review test code as part of code reviews.
+
+### Test Maintenance
+1. Update tests regularly.
+2. Remove obsolete tests.
+3. Update test documentation as needed.
+4. Monitor test performance.
+5. Address technical debt in test code.
+
+### Test Review
+1. Regularly review test coverage.
+2. Ensure high test quality.
+3. Verify assertions are meaningful.
+4. Check robust error handling.
+5. Review test documentation periodically.

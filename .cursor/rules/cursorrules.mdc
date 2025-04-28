@@ -1,0 +1,214 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# Supply Chain Management System - Cursor Rules
+
+## Project Structure
+
+### Backend (Django)
+- @backend/supply_chain/settings.py - Main Django settings
+- @backend/supply_chain/urls.py - Main URL routing
+- @backend/apps/*/models.py - Django models for each app
+- @backend/apps/*/views.py - API views for each app
+- @backend/apps/*/serializers.py - Data serialization
+- @backend/apps/*/urls.py - App-specific URL routing
+- @backend/ml/*.py - Machine learning modules
+
+### Frontend (Next.js)
+- @frontend/app/*.tsx - Next.js pages and layouts
+- @frontend/components/*.tsx - Reusable React components
+- @frontend/hooks/*.ts - Custom React hooks
+- @frontend/utils/*.ts - Utility functions
+- @frontend/styles/*.css - Global styles and Tailwind
+
+### Documentation
+- @.cursor/rules/*.md - Project rules and guidelines
+- @docs/architecture.md - System architecture
+- @docs/api/*.md - API documentation
+
+## Naming Conventions
+
+### Backend
+- Use snake_case for Python files and functions
+- Use PascalCase for Django models and classes
+- Use kebab-case for URL patterns
+- Use UPPERCASE for environment variables
+
+### Frontend
+- Use PascalCase for React components and TypeScript types
+- Use camelCase for JavaScript/TypeScript variables and functions
+- Use kebab-case for CSS classes and Tailwind utilities
+- Use snake_case for file names
+
+## Code Organization
+
+### Backend
+- Organize by feature/domain in Django apps
+- Keep models thin, business logic in services
+- Use Django REST Framework for API endpoints
+- Follow REST principles
+
+### Frontend
+- Organize by feature/route in Next.js
+- Use proper folder structure following Next.js conventions
+- Keep components focused and reusable
+- Follow component composition patterns
+
+## Documentation Standards
+- Maintain clear API documentation
+- Document complex business logic
+- Keep README files updated
+- Document environment setup
+
+## Testing Guidelines
+- Write unit tests for all components
+- Implement integration tests for critical flows
+- Use proper test naming conventions
+- Maintain test coverage above 80%
+
+## Security Guidelines
+- Validate all inputs
+- Implement proper authentication
+- Use secure communication
+- Follow security best practices
+
+## Machine Learning Guidelines
+- Follow proper data preprocessing steps
+- Document model architecture and parameters
+- Implement proper evaluation metrics
+- Version control models and datasets
+
+## Git Workflow
+- Follow branch naming conventions
+- Use conventional commit messages
+- Create descriptive pull requests
+- Review code before merging
+
+## Deployment Rules
+- Use environment-specific configurations
+- Implement proper CI/CD pipelines
+- Follow deployment checklist
+- Monitor application health
+
+## Accessibility Guidelines
+- Follow WCAG 2.1 standards
+- Use semantic HTML elements
+- Implement proper ARIA attributes
+- Ensure keyboard navigation
+
+## Accessing Project Rules
+
+### Rules Folder Location
+- The complete set of project rules is located in the `@.cursor/rules/` directory
+- Each rule type has its own dedicated markdown file
+
+### Available Rule Documents
+- @.cursor/rules/nomenclature.md - Comprehensive naming conventions for all project components
+- @.cursor/rules/coding_standards.md - Coding standards for Python and JavaScript/TypeScript
+- @.cursor/rules/ml_guidelines.md - Guidelines for machine learning development
+- @.cursor/rules/testing_guidelines.md - Testing requirements and best practices
+- @.cursor/rules/security_rules.md - Security requirements and best practices
+- @.cursor/rules/deployment_rules.md - Deployment procedures and requirements
+- @.cursor/rules/git_workflow.md - Git workflow and version control practices
+- @.cursor/rules/design.md - UI/UX design guidelines and component standards
+
+### How to Access Rules
+1. **From Cursor IDE**: Use the file explorer to navigate to the `.cursor/rules` directory
+2. **From Terminal**: Use `cd .cursor/rules` to navigate to the rules directory
+3. **Direct File Access**: Open specific rule files directly:
+   - `.cursor/rules/nomenclature.md` for naming conventions
+   - `.cursor/rules/coding_standards.md` for coding standards
+   - `.cursor/rules/ml_guidelines.md` for machine learning guidelines
+   - `.cursor/rules/testing_guidelines.md` for testing guidelines
+   - `.cursor/rules/security_rules.md` for security rules
+   - `.cursor/rules/deployment_rules.md` for deployment rules
+   - `.cursor/rules/git_workflow.md` for git workflow
+   - `.cursor/rules/design.md` for design guidelines
+
+## When to Follow Each Rule
+
+### @coding_standards.mdc
+- **When writing new code**: Follow these standards for all new code development
+- **When refactoring existing code**: Apply these standards during code refactoring
+- **During code reviews**: Use these standards to evaluate code quality
+- **When onboarding new developers**: Reference these standards for training
+- **When setting up new components**: Follow the appropriate section (Python/Django or JavaScript/TypeScript)
+- **When implementing new features**: Ensure code follows these standards
+- **When fixing bugs**: Maintain consistency with these standards
+
+### @deployment_rules.mdc
+- **Before deploying to any environment**: Follow the pre-deployment checklist
+- **When setting up new environments**: Reference the environment setup section
+- **During CI/CD pipeline configuration**: Follow the deployment process guidelines
+- **When scaling the application**: Consult the scaling section
+- **For backup and recovery planning**: Follow the backup and recovery guidelines
+- **When monitoring the application**: Implement the monitoring recommendations
+- **For scheduled maintenance**: Follow the maintenance procedures
+- **When responding to deployment issues**: Reference the troubleshooting steps
+
+### @git_workflow.mdc
+- **When creating new branches**: Follow the branch naming conventions
+- **When making commits**: Use the commit message format
+- **When creating pull requests**: Follow the PR process guidelines
+- **When merging code**: Follow the merging procedures
+- **For version control**: Use the version numbering system
+- **When collaborating with team members**: Follow the collaboration guidelines
+- **When setting up Git**: Configure according to the Git configuration section
+- **For repository maintenance**: Follow the best practices
+
+### @ml_guidelines.mdc
+- **When developing ML models**: Follow the model development guidelines
+- **During data preparation**: Follow the data preparation steps
+- **When training models**: Follow the training process guidelines
+- **For model evaluation**: Use the evaluation metrics and procedures
+- **When deploying ML models**: Follow the deployment process
+- **For infrastructure setup**: Configure according to the infrastructure section
+- **When testing ML components**: Follow the quality assurance guidelines
+- **For documentation of ML systems**: Follow the documentation standards
+
+### @nomenclature.mdc
+- **When naming new files, classes, or functions**: Follow the appropriate naming conventions
+- **When creating database tables or columns**: Use the database naming conventions
+- **When defining API endpoints**: Follow the API naming conventions
+- **When creating Docker resources**: Use the Docker naming conventions
+- **When creating Git branches or commits**: Follow the Git naming conventions
+- **When setting up environment variables**: Use the environment variable naming conventions
+- **When documenting the project**: Follow the documentation naming conventions
+- **When creating ML components**: Follow the ML naming conventions
+
+### @security_rules.mdc
+- **When implementing authentication**: Follow the authentication guidelines
+- **When setting up authorization**: Follow the authorization rules
+- **When handling sensitive data**: Follow the data security guidelines
+- **When configuring network security**: Follow the network security rules
+- **When handling user input**: Follow the input validation guidelines
+- **When managing dependencies**: Follow the dependency management rules
+- **When responding to security incidents**: Follow the incident response procedures
+- **When ensuring compliance**: Follow the compliance guidelines
+- **When providing security training**: Follow the security training guidelines
+
+### @testing_guidelines.mdc
+- **When writing backend tests**: Follow the Django testing guidelines
+- **When writing frontend tests**: Follow the React testing guidelines
+- **When organizing tests**: Follow the test organization structure
+- **When creating test data**: Follow the test data guidelines
+- **When setting up test automation**: Follow the CI/CD integration guidelines
+- **When performing performance testing**: Follow the performance testing guidelines
+- **When conducting security testing**: Follow the security testing guidelines
+- **When documenting tests**: Follow the test documentation guidelines
+- **When maintaining tests**: Follow the test maintenance best practices
+
+### @design.mdc
+- **When creating UI components**: Follow the component design guidelines
+- **When implementing layouts**: Use the defined grid system and spacing rules
+- **When selecting colors**: Use the approved color palette
+- **When choosing typography**: Follow the typography guidelines
+- **When designing forms**: Implement the form and input standards
+- **When creating data visualizations**: Use the specified chart library and styling
+- **When implementing animations**: Follow the animation and interaction guidelines
+- **When ensuring accessibility**: Adhere to the accessibility standards
+- **When reviewing designs**: Check against the design philosophy and consistency rules
+
+

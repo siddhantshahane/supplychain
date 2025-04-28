@@ -1,0 +1,169 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# Coding Standards for the Project
+
+## Python (Django) Standards
+
+### General Python Rules
+- **PEP 8:** Follow the PEP 8 style guide.
+- **Indentation:** Use 4 spaces per indentation level (no tabs).
+- **Line Length:** Maximum line length of 100 characters.
+- **Naming:** Use meaningful and descriptive names for variables and functions.
+- **Docstrings:** Add docstrings for all modules, classes, and functions.
+- **Type Hints:** Use type hints for function parameters and return values.
+- **Function Size:** Keep functions focused and, when possible, under 50 lines.
+
+### Django-Specific Rules
+- **Django Style:** Adhere to Django’s coding style and best practices.
+- **Built-in Features:** Prefer Django’s built-in features over custom solutions.
+- **Thin Models:** Keep models lean; place business logic in separate service modules.
+- **DRF for APIs:** Use Django REST Framework to build API endpoints.
+- **REST Conventions:** Follow REST API naming conventions.
+- **ORM Usage:** Use Django’s ORM for all database operations.
+- **Model Relationships:** Implement proper model relationships and database constraints.
+
+### Project Structure (Backend)
+- **App Organization:** Organize code into logical Django apps by feature/domain.
+- **Modular Settings:** Keep settings modular and environment-specific.
+- **Sensitive Data:** Use environment variables for sensitive data.
+- **Separation of Concerns:** Maintain a clear separation of concerns across modules.
+- **API Versioning:** Ensure clear versioning of API endpoints.
+
+---
+
+## Frontend Standards (Next.js, React, TypeScript)
+
+### TypeScript Rules
+- **Strict Configuration:** Use a strict TypeScript configuration.
+- **Explicit Types:** Define explicit types for variables, functions, and components.
+- **Avoid `any`:** Do not use the `any` type; use `unknown` when a type is uncertain.
+- **Reusable Types:** Create and maintain reusable type definitions in dedicated files.
+- **Interfaces & Aliases:** Use interfaces for object shapes and type aliases for unions/intersections.
+- **Utility Types:** Leverage TypeScript’s utility types (Partial, Pick, Omit, etc.).
+- **Generics:** Use generics for reusable components and functions where applicable.
+
+### Next.js Rules
+- **App Router:** Use the App Router for new projects.
+- **Server/Client Components:** Implement server components by default; use client components only when necessary.
+- **File-Based Routing:** Follow Next.js file-based routing conventions.
+- **Built-In Optimizations:** Utilize Next.js built-in optimizations (Image, Link, Script).
+- **SEO:** Implement proper metadata for SEO.
+- **API Routes:** Use Next.js API routes for backend functionality when appropriate.
+- **Middleware:** Leverage Next.js middleware for authentication and routing logic.
+- **Error Boundaries:** Implement proper error boundaries and loading states.
+
+### React Rules
+- **Functional Components:** Use functional components with hooks.
+- **Best Practices:** Follow React best practices and design patterns.
+- **Prop Validation:** Validate props with TypeScript (avoid prop-types if using TS).
+- **Global State:** Use React Context for global state when appropriate.
+- **Component Focus:** Keep components focused and reusable.
+- **Error Boundaries:** Implement error boundaries to catch rendering errors.
+- **Memoization:** Use React.memo and other memoization techniques for performance.
+- **Hooks Rules:** Only call hooks at the top level; do not call them conditionally.
+
+### Tailwind CSS Rules
+- **Utility-First:** Embrace Tailwind’s utility-first approach.
+- **Custom Components:** Create custom components for repeated patterns.
+- **Responsive Design:** Use Tailwind’s responsive design utilities.
+- **Dark Mode:** Leverage Tailwind’s dark mode features.
+- **Configuration:** Customize via Tailwind’s configuration file.
+- **Naming Conventions:** Follow consistent naming conventions for custom classes.
+- **JIT Mode:** Enable Tailwind’s Just-In-Time mode for optimal performance.
+- **Breakpoints:** Implement proper responsive design using Tailwind’s breakpoints.
+
+### State Management
+- **Local & Global State:** Use React local state for component-specific data; React Context for simple global state.
+- **Complex State:** Consider Zustand or Jotai for more complex state management.
+- **Server State:** Use React Query for managing server state.
+- **Loading/Error:** Implement proper loading and error states.
+- **Immutable Patterns:** Follow immutable state update patterns.
+- **Documentation:** Clearly document the state management architecture.
+
+---
+
+## Code Organization
+
+### Backend (Django)
+- **Feature Organization:** Organize code by feature or domain.
+- **Code Grouping:** Keep related code (models, views, serializers) together.
+- **Package Structure:** Use a proper package structure within apps.
+- **API Documentation:** Implement clear API documentation.
+- **REST Principles:** Follow REST principles in API design.
+
+### Frontend (Next.js)
+- **Feature/Route Organization:** Organize code by feature or route.
+- **Folder Structure:** Follow Next.js folder structure conventions.
+- **Component Hierarchy:** Maintain a clear hierarchy of components.
+- **Modular Styles:** Keep styles modular using Tailwind CSS.
+- **Composition:** Follow component composition patterns.
+- **Shared Components:** Organize reusable components in a dedicated directory.
+- **Naming Conventions:** Use clear naming conventions for pages and components.
+- **TypeScript Modules:** Maintain clear TypeScript module organization.
+
+---
+
+## Documentation
+- **API Documentation:** Maintain thorough API documentation.
+- **Business Logic:** Document complex business logic in the codebase.
+- **README:** Keep README files updated with setup and usage instructions.
+- **Environment Setup:** Document environment setup and configuration.
+- **Changelog:** Maintain a changelog for major updates.
+- **Component Docs:** Document component props and usage.
+- **Type Documentation:** Include documentation for TypeScript types.
+- **State Management:** Document state management patterns and architecture.
+
+---
+
+## Code Review Guidelines
+- **Security:** Check for potential security vulnerabilities.
+- **Performance:** Look for performance bottlenecks and optimize code.
+- **Error Handling:** Ensure proper error handling throughout the code.
+- **Testing:** Verify that proper testing (unit, integration, E2E) is in place.
+- **Documentation Updates:** Confirm documentation is up to date with changes.
+- **Type Safety:** Ensure TypeScript type safety and avoid `any`.
+- **Accessibility:** Review for accessibility compliance in the frontend.
+- **Responsive Design:** Verify that the UI implements responsive design effectively.
+
+---
+
+## Performance Guidelines
+- **Database Optimization:** Optimize database queries and use proper indexing.
+- **Caching:** Implement caching strategies for performance.
+- **API Efficiency:** Minimize unnecessary API calls.
+- **Frontend Rendering:** Optimize React rendering and component re-renders.
+- **Code Splitting:** Use code splitting to reduce bundle size.
+- **Asset Optimization:** Optimize images and assets.
+- **Lazy Loading:** Implement lazy loading for components and data.
+- **Memoization:** Use memoization techniques where applicable.
+- **Bundle Monitoring:** Continuously monitor and optimize the bundle size.
+
+---
+
+## Security Guidelines
+- **Input Validation:** Validate all user inputs rigorously.
+- **Authentication:** Implement robust authentication and authorization.
+- **Secure Communication:** Use HTTPS and secure communication channels.
+- **Best Practices:** Follow established security best practices.
+- **Audits:** Conduct regular security audits and dependency updates.
+- **CORS Policies:** Implement proper CORS policies.
+- **Content Security Policy:** Use a Content Security Policy (CSP) header.
+- **XSS Protection:** Implement measures to prevent cross-site scripting.
+- **HTTP Headers:** Use secure HTTP headers (e.g., HSTS, X-Frame-Options).
+
+---
+
+## Accessibility Guidelines
+- **WCAG 2.1:** Follow WCAG 2.1 standards for web accessibility.
+- **Semantic HTML:** Use semantic HTML elements.
+- **ARIA:** Implement proper ARIA attributes.
+- **Keyboard Navigation:** Ensure full keyboard navigation support.
+- **Focus Management:** Provide proper focus management on interactive elements.
+- **Color Contrast:** Use sufficient color contrast in designs.
+- **Form Labels:** Implement accessible form labels.
+- **Alt Text:** Provide alternative text for images.
+- **Screen Readers:** Test and optimize for screen reader compatibility.
+- **Documentation:** Document accessibility features and guidelines.

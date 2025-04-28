@@ -1,0 +1,242 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# Project Nomenclature Guide
+
+## General Naming Principles
+1. Use descriptive, meaningful names that clearly indicate purpose.
+2. Follow consistent casing conventions for each type of entity.
+3. Avoid abbreviations unless widely understood.
+4. Use domain-specific terminology from the supply chain industry.
+5. Maintain consistency across all project components.
+
+## Backend (Django) Naming Conventions
+
+### Project Structure
+- **Project Name**: `supply_chain` (snake_case)
+- **Apps**: `users`, `orders`, `inventory`, `transportation`, `analytics`, `notifications` (snake_case)
+- **Modules**: `ml`, `tasks`, `utils`, `services` (snake_case)
+
+### Python Files
+- **Core Files**: `models.py`, `views.py`, `urls.py`, `serializers.py`, `admin.py`, `tests.py` (snake_case)
+- **Custom Modules**: `order_service.py`, `inventory_manager.py`, `route_optimizer.py` (snake_case)
+- **Configuration Files**: `settings.py`, `celery.py`, `wsgi.py`, `asgi.py` (snake_case)
+
+### Django Models
+- **Model Names**: `User`, `Order`, `InventoryItem`, `TransportationRoute`, `AnalyticsReport` (PascalCase)
+- **Model Fields**: `first_name`, `last_name`, `order_date`, `item_quantity`, `route_distance` (snake_case)
+- **Related Fields**: `user_orders`, `inventory_items`, `transportation_routes` (snake_case)
+- **Many-to-Many Fields**: `order_items`, `route_waypoints` (snake_case)
+- **ForeignKey Fields**: `user_id`, `order_id`, `inventory_id` (snake_case)
+
+### Django Views
+- **View Classes**: `UserViewSet`, `OrderViewSet`, `InventoryViewSet` (PascalCase)
+- **View Methods**: `list`, `create`, `update`, `destroy`, `custom_action` (snake_case)
+- **Custom View Methods**: `process_order`, `update_inventory`, `optimize_route` (snake_case)
+
+### Django URLs
+- **URL Patterns**: `api/users/`, `api/orders/`, `api/inventory/` (kebab-case)
+- **URL Parameters**: `{id}`, `{order_id}`, `{user_id}` (snake_case)
+- **URL Names**: `user-list`, `order-detail`, `inventory-update` (kebab-case)
+
+### Django Serializers
+- **Serializer Classes**: `UserSerializer`, `OrderSerializer`, `InventorySerializer` (PascalCase)
+- **Serializer Fields**: `first_name`, `last_name`, `order_date` (snake_case)
+- **Nested Serializers**: `order_items`, `user_details` (snake_case)
+
+### Django Forms
+- **Form Classes**: `UserForm`, `OrderForm`, `InventoryForm` (PascalCase)
+- **Form Fields**: `first_name`, `last_name`, `order_date` (snake_case)
+
+### Django Tests
+- **Test Classes**: `UserTests`, `OrderTests`, `InventoryTests` (PascalCase)
+- **Test Methods**: `test_create_user`, `test_update_order`, `test_delete_inventory` (snake_case)
+
+### Django Templates
+- **Template Files**: `user_list.html`, `order_detail.html`, `inventory_form.html` (snake_case)
+- **Template Blocks**: `{% block content %}`, `{% block title %}`, `{% block scripts %}` (snake_case)
+- **Template Variables**: `{{ user }}`, `{{ order }}`, `{{ inventory }}` (snake_case)
+
+## Frontend (Next.js) Naming Conventions
+
+### Project Structure
+- **Pages**: `pages/`, `app/` (snake_case)
+- **Components**: `components/`, `layouts/`, `hooks/`, `utils/`, `styles/` (snake_case)
+- **Public Assets**: `public/images/`, `public/icons/`, `public/fonts/` (snake_case)
+
+### Next.js Files
+- **Page Files**: `index.tsx`, `about.tsx`, `orders/[id].tsx` (snake_case)
+- **Layout Files**: `layout.tsx`, `header.tsx`, `footer.tsx` (snake_case)
+- **API Routes**: `api/users.ts`, `api/orders.ts`, `api/inventory.ts` (snake_case)
+
+### React Components
+- **Component Files**: `UserCard.tsx`, `OrderList.tsx`, `InventoryTable.tsx` (PascalCase)
+- **Component Names**: `UserCard`, `OrderList`, `InventoryTable` (PascalCase)
+- **Component Props**: `userData`, `orderItems`, `inventoryStatus` (camelCase)
+- **Event Handlers**: `handleSubmit`, `onUserSelect`, `updateOrder` (camelCase)
+- **State Variables**: `userState`, `orderData`, `inventoryItems` (camelCase)
+- **Ref Variables**: `userRef`, `orderRef`, `inventoryRef` (camelCase)
+
+### CSS/Tailwind
+- **CSS Files**: `globals.css`, `components.css`, `utilities.css` (snake_case)
+- **CSS Classes**: `user-card`, `order-list`, `inventory-table` (kebab-case)
+- **CSS Variables**: `--primary-color`, `--secondary-color`, `--font-size` (kebab-case)
+- **Tailwind Classes**: `flex`, `p-4`, `text-lg`, `bg-blue-500` (kebab-case)
+- **Custom Tailwind Classes**: `supply-chain-card`, `order-status`, `inventory-alert` (kebab-case)
+
+### TypeScript
+- **Type Definitions**: `UserType`, `OrderType`, `InventoryType` (PascalCase)
+- **Interface Names**: `IUser`, `IOrder`, `IInventory` (PascalCase)
+- **Type Aliases**: `UserResponse`, `OrderStatus`, `InventoryLevel` (PascalCase)
+- **Enum Names**: `OrderStatusEnum`, `UserRoleEnum`, `InventoryCategoryEnum` (PascalCase)
+- **Generic Types**: `ApiResponse<T>`, `PaginatedResult<T>` (PascalCase)
+
+### State Management
+- **Store Names**: `userStore`, `orderStore`, `inventoryStore` (camelCase)
+- **Action Names**: `fetchUsers`, `createOrder`, `updateInventory` (camelCase)
+- **Selector Names**: `selectUserById`, `selectOrdersByStatus`, `selectInventoryLevel` (camelCase)
+- **Reducer Names**: `userReducer`, `orderReducer`, `inventoryReducer` (camelCase)
+
+## Database Naming Conventions
+
+### Tables
+- **Table Names**: `users`, `orders`, `inventory_items`, `transportation_routes` (snake_case, plural)
+- **Junction Tables**: `order_items`, `route_waypoints`, `user_roles` (snake_case, plural)
+
+### Columns
+- **Primary Keys**: `id` (snake_case)
+- **Foreign Keys**: `user_id`, `order_id`, `inventory_id` (snake_case)
+- **Regular Columns**: `first_name`, `last_name`, `order_date`, `item_quantity` (snake_case)
+- **Boolean Columns**: `is_active`, `is_completed`, `has_shipped` (snake_case)
+- **Timestamp Columns**: `created_at`, `updated_at`, `deleted_at` (snake_case)
+
+### Indexes
+- **Index Names**: `idx_users_email`, `idx_orders_date`, `idx_inventory_item_id` (snake_case)
+- **Unique Indexes**: `unq_users_email`, `unq_orders_reference`, `unq_inventory_sku` (snake_case)
+- **Composite Indexes**: `idx_orders_user_date`, `idx_inventory_category_status` (snake_case)
+
+## API Naming Conventions
+
+### Endpoints
+- **Base URL**: `/api/v1/` (kebab-case)
+- **Resource Endpoints**: `/api/v1/users`, `/api/v1/orders`, `/api/v1/inventory` (kebab-case, plural)
+- **Resource Detail**: `/api/v1/users/{id}`, `/api/v1/orders/{id}`, `/api/v1/inventory/{id}` (kebab-case)
+- **Nested Resources**: `/api/v1/users/{id}/orders`, `/api/v1/orders/{id}/items` (kebab-case)
+- **Action Endpoints**: `/api/v1/orders/{id}/process`, `/api/v1/inventory/{id}/adjust` (kebab-case)
+
+### HTTP Methods
+- **GET**: Retrieve resources.
+- **POST**: Create resources.
+- **PUT**: Update resources (full update).
+- **PATCH**: Update resources (partial update).
+- **DELETE**: Delete resources.
+
+### Query Parameters
+- **Filtering**: `?status=active`, `?category=electronics`, `?date_from=2023-01-01` (snake_case)
+- **Sorting**: `?sort=created_at`, `?sort=-updated_at` (snake_case)
+- **Pagination**: `?page=1`, `?limit=20` (snake_case)
+- **Searching**: `?search=keyword`, `?q=query` (snake_case)
+
+### Response Formats
+- **Success**: `{ "data": [...], "meta": {...} }`
+- **Error**: `{ "error": { "code": "...", "message": "..." } }`
+- **Paginated**: `{ "data": [...], "meta": { "page": 1, "limit": 20, "total": 100 } }`
+
+## Machine Learning Naming Conventions
+
+### Python Files
+- **Model Files**: `forecasting_model.py`, `route_optimizer.py`, `anomaly_detector.py` (snake_case)
+- **Utility Files**: `data_preprocessor.py`, `feature_engineering.py`, `model_evaluator.py` (snake_case)
+- **Pipeline Files**: `training_pipeline.py`, `inference_pipeline.py`, `evaluation_pipeline.py` (snake_case)
+
+### Classes
+- **Model Classes**: `ForecastingModel`, `RouteOptimizer`, `AnomalyDetector` (PascalCase)
+- **Utility Classes**: `DataPreprocessor`, `FeatureEngineer`, `ModelEvaluator` (PascalCase)
+- **Pipeline Classes**: `TrainingPipeline`, `InferencePipeline`, `EvaluationPipeline` (PascalCase)
+
+### Functions
+- **Model Functions**: `train_model`, `predict`, `evaluate_model` (snake_case)
+- **Data Functions**: `load_data`, `preprocess_data`, `split_data` (snake_case)
+- **Feature Functions**: `extract_features`, `transform_features`, `select_features` (snake_case)
+- **Evaluation Functions**: `calculate_metrics`, `plot_results`, `generate_report` (snake_case)
+
+### Variables
+- **Data Variables**: `training_data`, `test_data`, `validation_data` (snake_case)
+- **Model Variables**: `model`, `trained_model`, `baseline_model` (snake_case)
+- **Feature Variables**: `features`, `target`, `feature_names` (snake_case)
+- **Parameter Variables**: `learning_rate`, `batch_size`, `num_epochs` (snake_case)
+- **Metric Variables**: `accuracy`, `precision`, `recall`, `f1_score` (snake_case)
+
+## Docker Naming Conventions
+
+### Images
+- **Image Names**: `supply-chain-api`, `supply-chain-frontend`, `supply-chain-ml` (kebab-case)
+- **Image Tags**: `latest`, `v1.0.0`, `dev`, `staging`, `production` (lowercase)
+
+### Containers
+- **Container Names**: `supply-chain-api-container`, `supply-chain-frontend-container`, `supply-chain-ml-container` (kebab-case)
+- **Service Names**: `api`, `frontend`, `ml`, `db`, `redis`, `celery` (lowercase)
+
+### Volumes
+- **Volume Names**: `supply-chain-data`, `supply-chain-logs`, `supply-chain-backups` (kebab-case)
+
+### Networks
+- **Network Names**: `supply-chain-network`, `supply-chain-frontend-network`, `supply-chain-backend-network` (kebab-case)
+
+## Git Naming Conventions
+
+### Branches
+- **Main Branches**: `main`, `develop`, `staging` (lowercase)
+- **Feature Branches**: `feature/user-authentication`, `feature/order-management` (kebab-case)
+- **Bugfix Branches**: `bugfix/login-error`, `bugfix/order-calculation` (kebab-case)
+- **Hotfix Branches**: `hotfix/security-vulnerability`, `hotfix/critical-bug` (kebab-case)
+- **Release Branches**: `release/v1.0.0`, `release/v2.0.0` (kebab-case)
+
+### Commits
+- **Commit Types**: `feat`, `fix`, `docs`, `style`, `refactor`, `test`, `chore` (lowercase)
+- **Commit Format**: `type(scope): description` (lowercase)
+- **Examples**:
+  - `feat(auth): add user authentication`
+  - `fix(orders): correct order calculation`
+  - `docs(api): update API documentation`
+
+### Tags
+- **Tag Format**: `v1.0.0`, `v2.0.0` (lowercase)
+- **Tag Message**: `Release version 1.0.0` (sentence case)
+
+## Documentation Naming Conventions
+
+### Files
+- **Documentation Files**: `README.md`, `CONTRIBUTING.md`, `CHANGELOG.md` (UPPERCASE)
+- **API Documentation**: `api-documentation.md`, `endpoints.md`, `authentication.md` (kebab-case)
+- **User Guides**: `user-guide.md`, `getting-started.md`, `troubleshooting.md` (kebab-case)
+- **Developer Guides**: `developer-guide.md`, `architecture.md`, `deployment.md` (kebab-case)
+
+### Sections
+- **Section Headers**: `# Getting Started`, `# Installation`, `# Configuration` (Title Case)
+- **Subsections**: `## User Authentication`, `## Order Management`, `## Inventory Control` (Title Case)
+
+### Code Examples
+- **Example Names**: `user-authentication-example`, `order-processing-example`, `inventory-update-example` (kebab-case)
+- **File References**: `models.py`, `views.py`, `urls.py` (snake_case)
+
+## Environment Variables Naming Conventions
+
+### Backend Variables
+- **Database**: `DB_HOST`, `DB_PORT`, `DB_NAME`, `DB_USER`, `DB_PASSWORD` (UPPERCASE)
+- **API**: `API_KEY`, `API_SECRET`, `API_URL` (UPPERCASE)
+- **Authentication**: `JWT_SECRET`, `JWT_EXPIRATION`, `AUTH_TOKEN` (UPPERCASE)
+- **Email**: `EMAIL_HOST`, `EMAIL_PORT`, `EMAIL_USER`, `EMAIL_PASSWORD` (UPPERCASE)
+- **Redis**: `REDIS_HOST`, `REDIS_PORT`, `REDIS_PASSWORD` (UPPERCASE)
+
+### Frontend Variables
+- **API**: `NEXT_PUBLIC_API_URL`, `NEXT_PUBLIC_API_KEY` (UPPERCASE)
+- **Authentication**: `NEXT_PUBLIC_AUTH_URL`, `NEXT_PUBLIC_AUTH_TOKEN` (UPPERCASE)
+- **Feature Flags**: `NEXT_PUBLIC_ENABLE_FEATURE_X`, `NEXT_PUBLIC_ENABLE_FEATURE_Y` (UPPERCASE)
+
+### ML Variables
+- **Model**: `ML_MODEL_PATH`, `ML_MODEL_VERSION`, `ML_MODEL_TYPE` (UPPERCASE)
+- **Data**: `ML_DATA_PATH`, `ML_DATA_VERSION`, `ML_DATA_TYPE` (UPPERCASE)
+- **Training**: `ML_TRAINING_BATCH_SIZE`, `ML_TRAINING_EPOCHS`, `ML_TRAINING_LEARNING_RATE` (UPPERCASE)

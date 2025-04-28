@@ -1,103 +1,275 @@
+"use client"
+
 import Image from "next/image";
+import Link from "next/link";
+import { Header } from "@/components/Header";
+import { Footer } from "@/components/Footer";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Package, Truck, BarChart3, Settings, ShieldCheck, Zap } from "lucide-react";
+import { useState, useEffect } from "react";
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+  const [isDarkMode, setIsDarkMode] = useState(false);
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
+  // Detect dark mode
+  useEffect(() => {
+    const checkDarkMode = () => {
+      const isDark = document.documentElement.classList.contains('dark') || 
+                   document.documentElement.getAttribute('data-theme') === 'dark';
+      setIsDarkMode(isDark);
+    };
+    
+    // Initial check
+    checkDarkMode();
+    
+    // Set up mutation observer to detect theme changes
+    const observer = new MutationObserver(checkDarkMode);
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ['class', 'data-theme']
+    });
+    
+    return () => observer.disconnect();
+  }, []);
+
+  // Direct hover handler function
+  const handleMouseEnter = (e: React.MouseEvent<HTMLElement>) => {
+    if (!isDarkMode) return;
+    e.currentTarget.style.backgroundColor = 'white';
+    e.currentTarget.style.color = 'black';
+    // Change child SVGs and text
+    e.currentTarget.querySelectorAll('*').forEach((el: Element) => {
+      if (el instanceof HTMLElement) {
+        el.style.color = 'black';
+      }
+      // SVG-specific properties
+      if (el instanceof SVGElement) {
+        el.style.fill = 'black';
+        el.style.stroke = 'black';
+      }
+    });
+  };
+
+  const handleMouseLeave = (e: React.MouseEvent<HTMLElement>) => {
+    if (!isDarkMode) return;
+    e.currentTarget.style.backgroundColor = '';
+    e.currentTarget.style.color = '';
+    // Reset child SVGs and text
+    e.currentTarget.querySelectorAll('*').forEach((el: Element) => {
+      if (el instanceof HTMLElement) {
+        el.style.color = '';
+      }
+      // SVG-specific properties
+      if (el instanceof SVGElement) {
+        el.style.fill = '';
+        el.style.stroke = '';
+      }
+    });
+  };
+
+  return (
+    <div className="flex flex-col min-h-screen">
+      <Header />
+      
+      <main className="flex-1">
+        {/* Hero Section */}
+        <section className="py-12 md:py-20 lg:py-28 bg-gradient-to-b from-background to-muted overflow-hidden">
+          <div className="container px-4 md:px-6 mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
+              <div className="flex flex-col gap-4 text-center md:text-left">
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight">
+                  Streamline Your Supply Chain Management
+                </h1>
+                <p className="text-lg text-muted-foreground max-w-[600px] mx-auto md:mx-0">
+                  Optimize inventory, track orders, and manage suppliers with our all-in-one ERP solution.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-3 mt-2 justify-center md:justify-start">
+                  <Button 
+                    size="lg" 
+                    className="w-full sm:w-auto relative overflow-hidden group bg-primary hover:bg-primary"
+                    asChild
+                  >
+                    <Link href="/dashboard" className="relative z-10">
+                      <span className="relative z-10 transition-colors duration-300 group-hover:text-black font-medium">Get Started</span>
+                      <span className="absolute inset-0 bg-white dark:bg-white bg-gray-300 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out origin-left rounded-md"></span>
+                    </Link>
+                  </Button>
+                  <Button 
+                    size="lg" 
+                    variant="outline" 
+                    className="w-full sm:w-auto relative overflow-hidden group border-white/40 hover:border-white/40 hover:bg-transparent"
+                    asChild
+                  >
+                    <Link href="/demo" className="relative z-10">
+                      <span className="relative z-10 transition-colors duration-300 group-hover:text-black font-medium">Request Demo</span>
+                      <span className="absolute inset-0 bg-gray-400 dark:bg-white scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out origin-left rounded-md"></span>
+                    </Link>
+                  </Button>
+                </div>
+              </div>
+              <div className="flex justify-center mt-6 md:mt-0">
+                <div className="relative w-full max-w-[350px] md:max-w-[400px] aspect-square">
+                  <Image 
+                    src="/images/dashboard-preview.png" 
+                    alt="Dashboard preview" 
+                    fill
+                    className="object-contain drop-shadow-xl"
+                    priority
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Features Section */}
+        <section className="py-12 md:py-20 bg-background">
+          <div className="container px-4 md:px-6 mx-auto">
+            <div className="text-center mb-8 md:mb-12">
+              <h2 className="text-2xl md:text-3xl font-bold tracking-tight mb-3">Key Features</h2>
+              <p className="text-muted-foreground max-w-[700px] mx-auto">
+                Our comprehensive solution provides everything you need to manage your supply chain effectively.
+              </p>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+              <Card className="h-full">
+                <CardHeader className="pb-2">
+                  <Package className="h-6 w-6 mb-2 text-primary" />
+                  <CardTitle>Inventory Management</CardTitle>
+                  <CardDescription>
+                    Track inventory levels, set reorder points, and optimize stock levels.
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <ul className="list-disc pl-5 text-sm text-muted-foreground space-y-2">
+                    <li>Real-time inventory tracking</li>
+                    <li>Automated reorder notifications</li>
+                    <li>Inventory forecasting</li>
+                    <li>Barcode scanning support</li>
+                  </ul>
+                </CardContent>
+              </Card>
+
+              <Card className="h-full">
+                <CardHeader className="pb-2">
+                  <Truck className="h-6 w-6 mb-2 text-primary" />
+                  <CardTitle>Supplier Management</CardTitle>
+                  <CardDescription>
+                    Manage suppliers, track performance, and streamline procurement.
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <ul className="list-disc pl-5 text-sm text-muted-foreground space-y-2">
+                    <li>Supplier performance metrics</li>
+                    <li>Purchase order management</li>
+                    <li>Contract and pricing management</li>
+                    <li>Supplier communication tools</li>
+                  </ul>
+                </CardContent>
+              </Card>
+
+              <Card className="h-full sm:col-span-2 md:col-span-1">
+                <CardHeader className="pb-2">
+                  <BarChart3 className="h-6 w-6 mb-2 text-primary" />
+                  <CardTitle>Analytics & Reporting</CardTitle>
+                  <CardDescription>
+                    Gain insights with powerful analytics and customizable reports.
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <ul className="list-disc pl-5 text-sm text-muted-foreground space-y-2">
+                    <li>Real-time performance dashboards</li>
+                    <li>Customizable reporting tools</li>
+                    <li>Trend analysis and forecasting</li>
+                    <li>Data export capabilities</li>
+                  </ul>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </section>
+
+        {/* Benefits Section */}
+        <section className="py-12 md:py-20 bg-muted">
+          <div className="container px-4 md:px-6 mx-auto">
+            <div className="text-center mb-8 md:mb-12">
+              <h2 className="text-2xl md:text-3xl font-bold tracking-tight mb-3">Why Choose Us</h2>
+              <p className="text-muted-foreground max-w-[700px] mx-auto">
+                Our platform offers unique advantages to help your business thrive.
+              </p>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
+              <div className="flex flex-col items-center text-center p-4">
+                <div className="bg-primary/10 p-3 rounded-full mb-4">
+                  <Zap className="h-6 w-6 text-primary" />
+                </div>
+                <h3 className="text-xl font-medium mb-2">Increased Efficiency</h3>
+                <p className="text-muted-foreground">
+                  Automate workflows and reduce manual tasks to save time and resources.
+                </p>
+              </div>
+              <div className="flex flex-col items-center text-center p-4">
+                <div className="bg-primary/10 p-3 rounded-full mb-4">
+                  <ShieldCheck className="h-6 w-6 text-primary" />
+                </div>
+                <h3 className="text-xl font-medium mb-2">Enhanced Security</h3>
+                <p className="text-muted-foreground">
+                  Enterprise-grade security to protect your sensitive supply chain data.
+                </p>
+              </div>
+              <div className="flex flex-col items-center text-center p-4 sm:col-span-2 md:col-span-1">
+                <div className="bg-primary/10 p-3 rounded-full mb-4">
+                  <Settings className="h-6 w-6 text-primary" />
+                </div>
+                <h3 className="text-xl font-medium mb-2">Customizable Solution</h3>
+                <p className="text-muted-foreground">
+                  Tailor the platform to your specific business needs and workflows.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* CTA Section */}
+        <section className="py-12 md:py-20 lg:py-28 bg-background">
+          <div className="container px-4 md:px-6 mx-auto">
+            <div className="max-w-[800px] mx-auto text-center">
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight mb-4">
+                Ready to transform your supply chain?
+              </h2>
+              <p className="text-lg text-muted-foreground mb-6 md:mb-8">
+                Join thousands of businesses optimizing their operations with our platform.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-3 justify-center">
+                <Button 
+                  size="lg" 
+                  className="w-full sm:w-auto relative overflow-hidden group bg-primary hover:bg-primary"
+                  asChild
+                >
+                  <Link href="/dashboard" className="relative z-10">
+                    <span className="relative z-10 transition-colors duration-300 group-hover:text-black font-medium">Get Started Now</span>
+                    <span className="absolute inset-0 bg-white dark:bg-white bg-gray-300 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out origin-left rounded-md"></span>
+                  </Link>
+                </Button>
+                <Button 
+                  size="lg" 
+                  variant="outline" 
+                  className="w-full sm:w-auto relative overflow-hidden group border-white/40 hover:border-white/40 hover:bg-transparent"
+                  asChild
+                >
+                  <Link href="/contact" className="relative z-10">
+                    <span className="relative z-10 transition-colors duration-300 group-hover:text-black font-medium">Contact Sales</span>
+                    <span className="absolute inset-0 bg-gray-400 dark:bg-white scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out origin-left rounded-md"></span>
+                  </Link>
+                </Button>
+              </div>
+            </div>
+          </div>
+        </section>
       </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+
+      <Footer />
     </div>
   );
 }

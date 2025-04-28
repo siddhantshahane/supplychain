@@ -1,0 +1,154 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# Git Workflow Rules
+
+## Branch Strategy
+
+### Main Branches
+1. `main` - Production-ready code
+2. `develop` - Integration branch for features
+3. `staging` - Pre-production testing
+
+### Feature Branches
+1. Branch naming: `feature/description`
+2. Create from `develop`
+3. Keep focused and small
+4. Regular updates from `develop`
+5. Delete after merging
+
+### Hotfix Branches
+1. Branch naming: `hotfix/description`
+2. Create from `main`
+3. Merge back to both `main` and `develop`
+4. Delete after merging
+
+### Release Branches
+1. Branch naming: `release/version`
+2. Create from `develop`
+3. Only bug fixes and documentation
+4. Merge to both `main` and `develop`
+5. Tag with version number
+
+## Commit Guidelines
+
+### Commit Messages
+1. Use present tense
+2. Start with a verb
+3. Keep first line under 50 chars
+4. Add detailed description if needed
+5. Reference issue numbers
+
+### Commit Structure
+```
+<type>(<scope>): <subject>
+
+<body>
+
+<footer>
+```
+
+### Types
+- feat: New feature
+- fix: Bug fix
+- docs: Documentation
+- style: Formatting
+- refactor: Code restructuring
+- test: Adding tests
+- chore: Maintenance
+
+## Pull Request Process
+
+### Creating PRs
+1. Clear title and description
+2. Reference related issues
+3. List changes made
+4. Add screenshots if UI changes
+5. Request reviews from team members
+
+### Review Process
+1. At least one approval required
+2. All tests must pass
+3. No merge conflicts
+4. Follow coding standards
+5. Documentation updated
+
+### Merging
+1. Squash and merge for features
+2. Merge commit for releases
+3. Delete branch after merge
+4. Update version numbers
+5. Tag releases
+
+## Version Control
+
+### Version Numbers
+1. Follow semantic versioning
+2. Major.Minor.Patch format
+3. Update in appropriate files
+4. Tag releases in Git
+5. Document changes
+
+### Release Process
+1. Create release branch
+2. Update version numbers
+3. Update changelog
+4. Create pull request
+5. Deploy to staging
+
+## Collaboration
+
+### Team Workflow
+1. Regular pulls from develop
+2. Resolve conflicts locally
+3. Communicate changes
+4. Help review others' code
+5. Keep discussions in PRs
+
+### Code Review
+1. Be constructive
+2. Check functionality
+3. Verify tests
+4. Look for security issues
+5. Suggest improvements
+
+## Git Configuration
+
+### Local Setup
+1. Configure user details
+2. Set up SSH keys
+3. Configure Git aliases
+4. Set up Git hooks
+5. Configure editor
+
+### Repository Setup
+1. Initialize with .gitignore
+2. Set up branch protection
+3. Configure webhooks
+4. Set up CI/CD
+5. Configure access control
+
+## Best Practices
+
+### General Rules
+1. Never commit to main directly
+2. Keep commits atomic
+3. Regular pulls and pushes
+4. Clean up old branches
+5. Document significant changes
+
+### Security
+1. No sensitive data in commits
+2. Use .gitignore properly
+3. Regular security audits
+4. Protect sensitive branches
+5. Review access regularly
+
+### Maintenance
+1. Regular cleanup of branches
+2. Update documentation
+3. Review and update rules
+4. Monitor repository size
+5. Backup important data

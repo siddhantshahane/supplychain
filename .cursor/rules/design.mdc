@@ -1,0 +1,120 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# Detailed Design Guidelines
+
+## Overview
+These guidelines provide a comprehensive framework for creating a modern, minimalist, and highly usable user interface. They are intended to ensure consistency, usability, and aesthetic quality across all touchpoints of the application. The guide covers design philosophy, color schemes, typography, component styling, layout systems, and accessibility considerations.
+
+## Design Philosophy
+- **Modern Minimalism**: Focus on clean lines, ample whitespace, and simplicity. Every element should have a clear purpose.
+- **User-Centric Approach**: Prioritize user experience (UX) with intuitive navigation, clear feedback, and efficient workflows.
+- **Consistency & Clarity**: Maintain consistent visual language and component behavior throughout the product.
+- **Monochromatic Palette with Accents**: Use a primary monochromatic scheme with carefully chosen accent colors to highlight key actions and information.
+- **Accessibility**: Ensure that designs meet WCAG 2.1 standards and are usable by everyone, including users with disabilities.
+
+## Color Palette
+- **Primary Color**: #1F2937 (Dark Gray) – For headers, primary text, and key interactive elements.
+- **Secondary Color**: #374151 (Medium Gray) – For subheadings, secondary text, and supporting UI elements.
+- **Accent Color**: #4B5563 (Light Gray) – For borders, icons, and subtle highlights.
+- **Background Color**: #F9FAFB (Off White) – Main background for screens and large content areas.
+- **Surface Color**: #FFFFFF (White) – For cards, modals, panels, and other elevated surfaces.
+- **Error Color**: #DC2626 (Red) – For error messages and alerts.
+- **Success Color**: #16A34A (Green) – For success messages and confirmations.
+- **Warning Color**: #F59E0B (Yellow) – For warnings and cautionary messages.
+- **Info Color**: #3B82F6 (Blue) – For informational messages and secondary actions.
+
+## Typography
+- **Primary Font**: "Inter", sans-serif (fallback: Arial, sans-serif)
+- **Heading Styles**:
+  - H1: 2.5rem, Bold, letter-spacing: 0.05em
+  - H2: 2rem, Bold, letter-spacing: 0.05em
+  - H3: 1.75rem, Semi-bold
+- **Body Text**:
+  - Base: 1rem, Regular, line-height: 1.5
+  - Secondary Text: 0.875rem, Regular, lighter weight
+- **Captions and Small Text**: 0.75rem–0.875rem, Regular
+- **Consistent Spacing**: Maintain consistent line heights, margins, and padding between text elements for readability.
+
+## UI Components
+
+### Buttons
+- **Style**: Flat design with subtle shadow or border to indicate interactivity.
+- **States**: Define default, hover, active, and disabled states with smooth transitions (e.g., 200ms ease-in-out).
+- **Roundness**: Standard border radius of 4px.
+- **Padding**: Approximately 12px vertical and 16px horizontal.
+- **Typography**: Bold, uppercase text for primary actions; ensure clear contrast with background.
+
+### Forms & Inputs
+- **Input Fields**: Minimalistic design with clear focus outlines. Standardize with an 8px border radius.
+- **Labels**: Consistent font size (1rem) with medium weight.
+- **Spacing**: 16px spacing between form elements.
+- **Feedback**: Use inline validation messages and color changes (e.g., red borders for errors).
+
+### Cards & Panels
+- **Style**: Clean and simple, with a slight shadow or border to separate from the background.
+- **Roundness**: Border radius of 8px for cards and panels.
+- **Padding & Margin**: 16px internal padding; 16px margin between separate cards.
+- **Content Organization**: Use consistent spacing and hierarchy to display content clearly.
+
+### Navigation & Layout
+- **Header/Footer**: Fixed, minimal headers and footers with clear branding and navigation items.
+- **Menus**: Simple dropdowns or side menus that follow the grid structure.
+- **Grid System**: Utilize a 12-column grid to structure content. Ensure responsiveness by using flexible breakpoints.
+- **Spacing Scale**: Use an 8px spacing system (8px, 16px, 24px, etc.) to maintain consistency.
+
+### Modals, Tooltips & Alerts
+- **Modals**: Centered with a semi-transparent dark backdrop. Border radius of 10px. Ensure clear close actions.
+- **Tooltips**: Minimal design with a small shadow and subtle animation; use accent colors for text.
+- **Alerts**: Different alert types (error, success, warning, info) with a 4px border radius and accompanying icons.
+
+### Charts & Data Visualizations
+- **Library**: Use Shardcn Charts for visual consistency.
+- **Components**: Import necessary components (e.g., BarChart, LineChart) and customize them to match the color palette.
+- **Design Consistency**: Ensure uniform labeling, grid lines, and spacing across all chart types.
+
+## Layout & Spacing
+- **Consistent Grid**: Follow a 12-column grid for layout. Define clear margins and gutters.
+- **Whitespace**: Emphasize whitespace to reduce clutter and improve focus.
+- **Alignment**: Align elements consistently using the grid system; maintain baseline alignment for text.
+- **Component Sizing**: Standardize common component sizes (buttons, inputs, cards) to ensure uniformity.
+
+## Design Symmetry & Consistency Rules
+- **Roundness**: 
+  - Buttons: 4px
+  - Cards: 8px
+  - Modals: 10px
+- **Font Spacing**: Consistent line heights and letter spacing; for example, 1.5 line-height for body text and 0.05em letter-spacing for headings.
+- **Color Consistency**: Use the defined color palette strictly. Reserve accent colors for interactive or critical elements only.
+- **Component Consistency**: All UI elements should share similar padding, margin, and alignment rules to create a harmonious layout.
+- **Responsive Design**: Ensure that all components adapt gracefully to different screen sizes and orientations.
+
+## Component Library Setup
+1. **Shardcn Charts Installation**:
+   ```bash
+   npm install @shardcn/charts
+   ```
+2. **Importing Charts**:
+   ```javascript
+   import { BarChart, LineChart } from '@shardcn/charts';
+   ```
+
+## Iconography & Imagery
+- **Icons**: Use a minimalist, monochromatic icon set that aligns with the overall color palette.
+- **Images**: Use high-resolution images optimized for performance; images should complement the monochromatic theme without overpowering the design.
+
+## Animations & Interactions
+- **Transitions**: Apply smooth transitions (around 200ms) for hover, focus, and active states.
+- **Interactive Feedback**: Provide immediate, subtle visual feedback (e.g., slight scaling or color shift) on interactive elements.
+- **Loading States**: Use minimal spinners or skeleton screens that align with the overall design language.
+
+## Accessibility
+- **Contrast**: Ensure text and interactive elements have sufficient contrast against backgrounds.
+- **Focus Indicators**: Clearly highlight focus states for keyboard navigation.
+- **ARIA & Semantics**: Use appropriate ARIA attributes and semantic HTML elements.
+- **Responsive Considerations**: Design for a range of devices, ensuring usability across mobile, tablet, and desktop.
+
+## Final Thoughts
+This guide should serve as the design blueprint for our project, ensuring that every UI and UX element adheres to a modern, minimalist, and accessible standard. Consistency in color, typography, spacing, and component styling is key to creating an intuitive and visually appealing user experience.

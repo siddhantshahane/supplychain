@@ -1,0 +1,236 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# Security Rules
+
+## Authentication
+
+### User Authentication
+1. Implement secure password hashing.
+2. Enforce multi-factor authentication (MFA) where possible.
+3. Apply strict password policies.
+4. Set up account lockout mechanisms.
+5. Manage sessions securely.
+
+### API Authentication
+1. Use JWT tokens for authentication.
+2. Enforce token expiration.
+3. Securely store tokens.
+4. Implement refresh tokens.
+5. Apply rate limiting.
+
+### OAuth/SSO
+1. Ensure secure OAuth implementation.
+2. Handle scopes appropriately.
+3. Validate tokens rigorously.
+4. Provide robust error handling.
+5. Manage logout flows securely.
+
+## Authorization
+
+### Role-Based Access
+1. Define clear user roles.
+2. Implement role-based access control (RBAC).
+3. Regularly review and update roles.
+4. Enforce the principle of least privilege.
+5. Support role inheritance where needed.
+
+### Permission Management
+1. Implement granular permission controls.
+2. Organize permissions into groups.
+3. Conduct regular permission audits.
+4. Perform periodic access reviews.
+5. Document permission structures.
+
+### API Authorization
+1. Protect endpoints with strict access rules.
+2. Validate resource ownership.
+3. Enforce scope validation.
+4. Apply rate limiting.
+5. Use IP whitelisting where applicable.
+
+## Data Security
+
+### Data Encryption
+1. Encrypt data at rest.
+2. Encrypt data in transit.
+3. Follow robust key management practices.
+4. Use industry-standard encryption algorithms.
+5. Rotate encryption keys regularly.
+
+### Sensitive Data Handling
+1. Classify data appropriately.
+2. Handle PII with special care.
+3. Mask sensitive data in logs and outputs.
+4. Define clear data retention policies.
+5. Ensure secure data disposal.
+
+### Database Security
+1. Use secure database connections.
+2. Sanitize all queries to prevent injection.
+3. Enforce strict access control.
+4. Maintain comprehensive audit logging.
+5. Encrypt database backups.
+
+## Network Security
+
+### API and Web Security
+1. Enforce HTTPS exclusively.
+2. Configure CORS properly.
+3. Apply rate limiting.
+4. Validate all input data.
+5. Encode all outputs.
+
+### Infrastructure Security
+1. Configure firewall rules.
+2. Implement network segmentation.
+3. Require VPN access for sensitive areas.
+4. Protect against DDoS attacks.
+5. Set up a robust WAF.
+
+### Monitoring and Response
+1. Maintain comprehensive security logs.
+2. Deploy intrusion detection systems.
+3. Analyze traffic patterns continuously.
+4. Configure alerting for suspicious activity.
+5. Define a clear incident response plan.
+
+## Application Security
+
+### Input and Output Handling
+1. Enforce strict server-side validation.
+2. Complement with client-side validation.
+3. Sanitize all input data.
+4. Secure file upload mechanisms.
+5. Validate all API inputs.
+
+### Output Encoding
+1. Encode HTML outputs.
+2. Encode JavaScript outputs.
+3. Encode URLs properly.
+4. Sanitize SQL queries.
+5. Encode JSON outputs.
+
+### Error Handling
+1. Return secure, generic error messages.
+2. Log errors without exposing sensitive data.
+3. Disable debug mode in production.
+4. Control stack trace visibility.
+5. Monitor errors actively.
+
+## Code Security
+
+### Secure Coding Practices
+1. Follow OWASP guidelines.
+2. Enforce a strict code review process.
+3. Integrate regular security testing.
+4. Perform dependency scanning.
+5. Manage vulnerabilities proactively.
+
+### Dependency Management
+1. Update dependencies regularly.
+2. Apply security patches promptly.
+3. Control dependency versions via version control.
+4. Audit dependencies periodically.
+5. Ensure license compliance.
+
+### Code Reviews
+1. Use a security checklist for reviews.
+2. Scan for vulnerabilities regularly.
+3. Leverage automated code analysis.
+4. Conduct thorough peer reviews.
+5. Update documentation based on reviews.
+
+## Infrastructure Security
+
+### Server Security
+1. Harden the operating system.
+2. Secure all running services.
+3. Implement robust patch management.
+4. Enforce strict access control.
+5. Continuously monitor servers.
+
+### Container Security
+1. Scan container images for vulnerabilities.
+2. Ensure runtime security.
+3. Control container access.
+4. Secure container network communications.
+5. Set resource limits on containers.
+
+### Cloud Security
+1. Define strict IAM policies.
+2. Isolate resources effectively.
+3. Encrypt all cloud-stored data.
+4. Monitor cloud resources continuously.
+5. Ensure compliance with standards.
+
+## Incident Response
+
+### Security Incidents
+1. Implement robust incident detection.
+2. Define clear response procedures.
+3. Maintain a communication plan.
+4. Establish recovery steps.
+5. Conduct post-mortem analyses.
+
+### Breach Response
+1. Detect breaches swiftly.
+2. Contain breaches immediately.
+3. Investigate thoroughly.
+4. Notify affected parties promptly.
+5. Execute recovery plans.
+
+### Documentation
+1. Maintain detailed incident logs.
+2. Document response procedures.
+3. Use standardized communication templates.
+4. Keep recovery plans updated.
+5. Record lessons learned.
+
+## Compliance
+
+### Data Protection
+1. Ensure GDPR and other data protection compliance.
+2. Maintain robust data privacy measures.
+3. Define clear data retention policies.
+4. Respect user rights.
+5. Keep compliance documentation current.
+
+### Industry Standards
+1. Adhere to PCI DSS, ISO 27001, SOC 2, NIST.
+2. Comply with industry-specific regulations.
+3. Implement recommended security controls.
+4. Monitor regulatory changes.
+5. Document compliance measures.
+
+### Auditing
+1. Conduct regular security audits.
+2. Perform routine compliance checks.
+3. Maintain thorough documentation.
+4. Address remediation promptly.
+5. Report audit findings transparently.
+
+## Security Training
+
+### Developer Training
+1. Provide secure coding training.
+2. Educate on security best practices.
+3. Train on incident response.
+4. Cover compliance requirements.
+5. Offer regular security updates.
+
+### User Training
+1. Enhance security awareness.
+2. Promote strong password practices.
+3. Educate on phishing threats.
+4. Guide secure data handling.
+5. Encourage prompt incident reporting.
+
+### Documentation
+1. Maintain up-to-date security policies.
+2. Document security procedures.
+3. Provide clear security guidelines.
+4. Update training materials regularly.
+5. Ensure accessibility of security documentation.

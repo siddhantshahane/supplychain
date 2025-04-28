@@ -1,0 +1,229 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# Deployment Rules Prompt
+
+## Environment Setup
+
+### Development Environment
+- **Local Setup:** Ensure a fully working local development environment.
+- **Database:** Use a dedicated development database.
+- **Mock Services:** Integrate with mock or sandbox services for external dependencies.
+- **Debug Mode:** Enable debug mode for detailed logging.
+- **Environment Variables:** Use local environment variables (e.g., via a `.env` file).
+
+### Staging Environment
+- **Staging Server:** Set up a dedicated staging server mirroring production.
+- **Database:** Use a separate staging database.
+- **Test Integrations:** Connect to test versions of external services.
+- **Debug Mode:** Disable debug mode for a production-like experience.
+- **Environment Variables:** Use staging-specific environment variables.
+
+### Production Environment
+- **Server Setup:** Deploy on production-grade servers with robust configurations.
+- **Database:** Use a production-grade database with high availability.
+- **Live Integrations:** Connect to live external integrations.
+- **Debug Mode:** Ensure debug mode is disabled.
+- **Environment Variables:** Store environment variables securely (e.g., via secret managers).
+
+---
+
+## Deployment Process
+
+### Pre-deployment Checklist
+1. **Code Review:** Confirm that all code has been peer-reviewed.
+2. **Testing:** Ensure all tests (unit, integration, E2E) have passed.
+3. **Documentation:** Update documentation with any changes.
+4. **Version Tagging:** Tag the current version in source control.
+5. **Changelog:** Update the changelog with recent modifications.
+
+### Deployment Steps
+1. **Backup:** Backup the current production version (code and database).
+2. **Database Migrations:** Run and verify database migrations.
+3. **Application Code:** Deploy the new application code.
+4. **Environment Variables:** Update environment variables if needed.
+5. **Verification:** Run post-deployment verification (health checks, manual tests).
+
+### Post-deployment Procedures
+1. **Health Checks:** Conduct health checks across all services.
+2. **Log Monitoring:** Monitor logs for any errors or anomalies.
+3. **Functionality Verification:** Verify key functionalities are operating as expected.
+4. **Documentation:** Update deployment documentation to reflect any changes.
+5. **Stakeholder Notification:** Notify stakeholders of the successful deployment.
+
+---
+
+## Infrastructure
+
+### Server Requirements
+1. **CPU:** Define CPU specifications based on expected load.
+2. **Memory:** Ensure sufficient memory allocation.
+3. **Storage:** Allocate persistent and scalable storage.
+4. **Network:** Configure network settings, including load balancers and firewall rules.
+5. **Security:** Implement necessary security settings at the server level.
+
+### Database Configuration
+1. **Version:** Use a stable and supported database version.
+2. **Backup Strategy:** Define a robust backup strategy.
+3. **Replication:** Set up database replication for high availability.
+4. **Performance Tuning:** Optimize database performance through indexing and query tuning.
+5. **Security:** Configure database access with strict security settings.
+
+### Caching Configuration
+1. **Redis Setup:** Configure Redis for caching purposes.
+2. **Cache Invalidation:** Implement proper cache invalidation mechanisms.
+3. **Strategies:** Define cache strategies for different layers (e.g., in-memory, distributed).
+4. **Memory Management:** Monitor and manage cache memory usage.
+5. **Performance:** Continuously monitor cache performance.
+
+---
+
+## Security
+
+### Access Control
+1. **Authentication:** Ensure robust user authentication mechanisms.
+2. **RBAC:** Implement role-based access control.
+3. **API Security:** Secure API endpoints with appropriate tokens/keys.
+4. **Network Security:** Harden network configurations and access.
+5. **File Permissions:** Set strict file permissions and access rights.
+
+### Data Protection
+1. **Encryption at Rest:** Encrypt sensitive data stored on disk.
+2. **Encryption in Transit:** Use HTTPS/SSL for data transmission.
+3. **Backup Encryption:** Encrypt backups to protect data.
+4. **Key Management:** Manage encryption keys securely.
+5. **Data Retention:** Follow data retention policies for sensitive information.
+
+### Monitoring Security
+1. **Security Logs:** Collect and analyze security logs.
+2. **Access Logs:** Monitor access logs for suspicious activity.
+3. **Error Logs:** Track error logs for potential security issues.
+4. **Performance Metrics:** Monitor performance metrics with a security perspective.
+5. **Alerts:** Configure alerts for security events.
+
+---
+
+## Scaling
+
+### Horizontal Scaling
+1. **Load Balancing:** Set up load balancers to distribute traffic.
+2. **Session Management:** Implement session management for distributed environments.
+3. **Database Replication:** Use database replication to handle read loads.
+4. **Cache Distribution:** Distribute cache across multiple nodes.
+5. **Service Discovery:** Implement service discovery for dynamic scaling.
+
+### Vertical Scaling
+1. **Resource Allocation:** Adjust CPU and memory allocation as needed.
+2. **Performance Tuning:** Optimize individual components for better performance.
+3. **Database Optimization:** Fine-tune the database for vertical scaling.
+4. **Cache Optimization:** Optimize cache configurations for maximum efficiency.
+5. **Memory Management:** Monitor and adjust memory usage.
+
+### Auto-scaling
+1. **Triggers:** Define scaling triggers based on metrics (CPU, memory, traffic).
+2. **Policies:** Set up auto-scaling policies for dynamic resource management.
+3. **Resource Limits:** Establish clear resource limits.
+4. **Cost Management:** Monitor scaling to control operational costs.
+5. **Monitoring:** Continuously monitor performance during scaling events.
+
+---
+
+## Backup and Recovery
+
+### Backup Strategy
+1. **Database Backups:** Schedule regular database backups.
+2. **File Backups:** Backup critical files and assets.
+3. **Configuration Backups:** Backup configuration files and environment settings.
+4. **Frequency:** Define backup frequency (daily, weekly, etc.).
+5. **Retention Policy:** Implement a clear retention policy.
+
+### Recovery Process
+1. **Procedures:** Define clear recovery procedures.
+2. **Testing:** Regularly test recovery procedures.
+3. **Data Restoration:** Ensure quick data restoration processes.
+4. **Service Restoration:** Plan for full service restoration.
+5. **Verification:** Verify the integrity of restored data and services.
+
+### Disaster Recovery
+1. **DR Plan:** Maintain a comprehensive disaster recovery plan.
+2. **Failover Procedures:** Establish failover procedures for critical systems.
+3. **Data Replication:** Use data replication for disaster recovery.
+4. **Service Redundancy:** Ensure redundancy for critical services.
+5. **RTO/RPO:** Define recovery time and point objectives.
+
+---
+
+## Monitoring
+
+### Application Monitoring
+1. **Error Tracking:** Implement robust error tracking mechanisms.
+2. **Performance Monitoring:** Monitor application performance in real time.
+3. **User Analytics:** Track user behavior and usage patterns.
+4. **Resource Usage:** Monitor resource usage across services.
+5. **Service Health:** Continuously verify service health.
+
+### Infrastructure Monitoring
+1. **Server Monitoring:** Monitor server health and metrics.
+2. **Network Monitoring:** Track network performance and uptime.
+3. **Database Monitoring:** Monitor database performance and queries.
+4. **Cache Monitoring:** Keep an eye on cache performance.
+5. **Security Monitoring:** Ensure constant security monitoring of the infrastructure.
+
+### Alerting
+1. **Thresholds:** Define clear alert thresholds for critical metrics.
+2. **Channels:** Set up multiple alert channels (email, SMS, Slack, etc.).
+3. **Escalation:** Create escalation procedures for unresolved alerts.
+4. **On-call Rotation:** Establish an on-call rotation for immediate response.
+5. **Incident Response:** Document incident response procedures.
+
+---
+
+## Maintenance
+
+### Regular Maintenance
+1. **Security Updates:** Apply security patches and updates regularly.
+2. **Dependency Updates:** Update project dependencies on a regular schedule.
+3. **Database Maintenance:** Schedule routine database maintenance.
+4. **Log Rotation:** Implement log rotation policies.
+5. **Cache Cleanup:** Clean up cache and temporary files periodically.
+
+### Scheduled Maintenance
+1. **Maintenance Windows:** Define and communicate regular maintenance windows.
+2. **Notifications:** Notify stakeholders before scheduled maintenance.
+3. **Backup Procedures:** Ensure backups are taken before maintenance.
+4. **Rollback Plan:** Have a rollback plan ready in case of issues.
+5. **Verification:** Verify system integrity post-maintenance.
+
+### Emergency Maintenance
+1. **Emergency Procedures:** Define emergency maintenance procedures.
+2. **Communication:** Have a communication plan for emergencies.
+3. **Recovery Steps:** Document clear recovery steps.
+4. **Documentation:** Maintain documentation for emergency procedures.
+5. **Post-mortem:** Conduct post-mortem analyses after emergency maintenance events.
+
+---
+
+## Documentation
+
+### Deployment Documentation
+1. **Procedures:** Document detailed deployment procedures.
+2. **Configuration Guide:** Provide guides for configuring all environments.
+3. **Troubleshooting:** Include troubleshooting steps for common issues.
+4. **Recovery Procedures:** Document recovery procedures in detail.
+5. **Maintenance Procedures:** Maintain up-to-date maintenance documentation.
+
+### Infrastructure Documentation
+1. **Architecture Diagram:** Maintain updated architecture diagrams.
+2. **Network Diagram:** Document network configurations and topology.
+3. **Security Config:** Keep documentation of security configurations.
+4. **Backup Procedures:** Document backup and restoration procedures.
+5. **Monitoring Setup:** Provide detailed documentation for monitoring systems.
+
+### Operational Documentation
+1. **Daily Ops:** Document daily operational procedures.
+2. **Incident Response:** Keep an up-to-date incident response plan.
+3. **Maintenance Procedures:** Document regular and scheduled maintenance procedures.
+4. **Security Procedures:** Provide detailed security procedure documentation.
+5. **Recovery Procedures:** Maintain documentation for all recovery steps.
